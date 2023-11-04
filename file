@@ -1,0 +1,15 @@
+#!/usr/bin/php
+<?php
+declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Compiler\Encrypt\Commands\DecryptFile;
+use Compiler\Encrypt\Commands\EncryptFile;
+use Symfony\Component\Console\Application;
+
+ini_set('date.timezone', 'Asia/Shanghai');
+$application = new Application();
+$application->add(new EncryptFile());
+$application->add(new DecryptFile());
+$application->run();
