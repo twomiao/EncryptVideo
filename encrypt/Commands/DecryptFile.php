@@ -94,9 +94,7 @@ class DecryptFile extends Command
         foreach ($files as $id => $file) {
             try {
                 $header = new FileHeader($file->getRealPath(), $password);
-                if(!$header->info()) {
-                    continue;
-                }
+                $header->info();
                 $file = array(
                     'id' =>  $id,
                     'filename' => $header->info()->filename,
