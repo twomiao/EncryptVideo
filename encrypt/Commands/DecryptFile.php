@@ -23,6 +23,11 @@ class DecryptFile extends Command
             ->setDescription("解密视频文件");
     }
 
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        ini_set('date.timezone', 'Asia/Shanghai');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $password = "123456";

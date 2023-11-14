@@ -21,6 +21,11 @@ class EncryptFile extends Command
             ->setDescription("加密视频文件");
     }
 
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        ini_set('date.timezone', 'Asia/Shanghai');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $files = Utils::scanFiles(__DIR__ . "/../../videos", "mp4");

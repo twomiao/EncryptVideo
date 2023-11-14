@@ -7,9 +7,12 @@ require __DIR__ . '/vendor/autoload.php';
 use Compiler\Encrypt\Commands\DecryptFile;
 use Compiler\Encrypt\Commands\EncryptFile;
 use Symfony\Component\Console\Application;
+use Compiler\encrypt\Commands\FastEncrypt;
+use Compiler\encrypt\Commands\FastDecrypt;
 
-ini_set('date.timezone', 'Asia/Shanghai');
 $application = new Application();
 $application->add(new EncryptFile());
 $application->add(new DecryptFile());
+$application->add(new FastEncrypt());
+$application->add(new FastDecrypt());
 $application->run();

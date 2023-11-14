@@ -48,7 +48,7 @@ class EncryptFileTest extends TestCase
     public function test_encrypt_file()
     {
         // $sourcePath = __DIR__ . "/1.txt";
-        $sourcePath = __DIR__ . "/1.mp4";
+        $sourcePath = __DIR__ . "/1.mkv";
         $source = fopen($sourcePath, "r");
         $dest = fopen(__DIR__ . "/test.mp4.zz", "w+");
         $readBufferSize = 10 * 1024 * 1024;
