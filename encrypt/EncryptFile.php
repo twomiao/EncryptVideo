@@ -35,7 +35,11 @@ class EncryptFile extends File
         {
             return false;
         }
-        $encryptedInfo = @unserialize(Utils::decryptString($buffer, $password));
+        if( !$data = Utils::decryptString($buffer, $password) )
+        {
+            throw new \Exception("[ {$this->getBasename()} ] Decryption failed.");
+        }
+        $encryptedInfo = @unserialize($data);
         if (!$encryptedInfo)
         {
             return false;

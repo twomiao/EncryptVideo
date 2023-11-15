@@ -40,7 +40,7 @@ final class FastDecrypt extends Command
 
         $files = self::showFileTable($output, ...$files);
 
-        $password = '995200452';
+        $password = '995200452p';
 
         /**
          * @var SplFileInfo $file
