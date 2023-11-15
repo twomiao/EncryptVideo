@@ -40,7 +40,7 @@ final class FastDecrypt extends Command
 
         $files = self::showFileTable($output, ...$files);
 
-        $password = '995200452p';
+        $password = '995200452';
 
         /**
          * @var SplFileInfo $file
@@ -50,7 +50,7 @@ final class FastDecrypt extends Command
                 clearstatcache();
                 if(!$file->isFile())
                 {
-                    $this->output->writeln("<error>文件已被删除</error>");
+                    $this->output->writeln("<error>[ {$file->getBasename()} ]文件已被删除</error>");
                     continue;
                 }
                 // 原文件
